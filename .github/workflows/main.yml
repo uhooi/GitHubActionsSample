@@ -4,14 +4,14 @@ on: [push]
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_11.2.1.app/Contents/Developer
 
     steps:
+    # チェックアウト
     - uses: actions/checkout@v2
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+      
+    # ビルド
+    - name: Xcode build
+      run: xcodebuild -sdk iphonesimulator -configuration Debug build
