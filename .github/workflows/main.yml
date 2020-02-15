@@ -18,5 +18,5 @@ jobs:
 
     # テスト
     - name: Xcode test
-      run: xcodebuild -sdk iphonesimulator -configuration Debug -destination 'platform=iOS Simulator,name=iPhone 11 Pro Max' -skip-testing:GitHubActionsSample clean test
+      run: xcodebuild -sdk iphonesimulator -configuration Debug -scheme GitHubActionsSample -destination 'platform=iOS Simulator,name=iPhone 11 Pro Max' -skip-testing:GitHubActionsSampleUITests clean test
       
